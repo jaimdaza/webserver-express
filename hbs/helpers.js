@@ -1,5 +1,5 @@
 const hbs = require('hbs');
-// helpers
+// helpers funciones globales a llamar
 hbs.registerHelper('getAnio', () => {
     return new Date().getFullYear();
 });

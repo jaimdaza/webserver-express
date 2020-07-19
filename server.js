@@ -1,15 +1,15 @@
 const express = require('express')
 const app = express(); // nos permite usar express
 const hbs = require('hbs');
-require('./hbs/helpers');
+require('./hbs/helpers'); // llamar las funciones globales
 
-// definir puerto
+// definir puerto en heroku y local
 const port = process.env.PORT || 3000;
 
 //middeware
 app.use(express.static(__dirname + '/public'));
 
-// express HBS
+// express HBS, para decirle donde van a estar las paginas a incluir en otras
 hbs.registerPartials(__dirname + '/views/parciales');
 app.set('view engine', 'hbs');
 
